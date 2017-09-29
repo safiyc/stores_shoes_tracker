@@ -29,17 +29,20 @@ post("/brands") do
   erb(:index)
 end
 
+# from index to store page
 get '/stores/:id' do
   @store = Store.find(params[:id])
   # @shoes = @store.brands
   erb(:store_page)
 end
 
+# from store page to store edit page
 get("/stores/:id/edit") do
   @store =  Store.find(params.fetch("id").to_i())
   erb(:store_edit)
 end
 
+# in store edit page; then, back to store page
 patch("/stores/:id") do
   store_name = params.fetch("store_name")
   @store = Store.find(params.fetch("id").to_i())
@@ -47,9 +50,11 @@ patch("/stores/:id") do
   erb(:store_page)
 end
 
-# delete("/:id") do
-#   @store = Store.find(params.fetch("id").to_i())
-#   @store.delete
-#   @stores = Store.all
-#   erb(:index)
-# end
+# in store edit page; then, back to index
+delete("/:id") do
+  @store = Store.find(params.fetch("id").to_i())
+  @store.delete
+  @stores = Store.all
+  @brands = Brand.all
+  erb(:index)
+end

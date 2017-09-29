@@ -40,3 +40,14 @@ describe 'the store edit path', {:type => :feature} do
     expect(page).to have_content('storeb')
   end
 end
+
+describe 'the store edit path', {:type => :feature} do
+  it 'allows a user to delete a store' do
+    store1 = Store.create({:store_name => 'store1'})
+    visit '/'
+    click_link('store1')
+    click_link('Edit Name')
+    click_button('Delete Store')
+    expect(page).not_to have_content('storeb')
+  end
+end
