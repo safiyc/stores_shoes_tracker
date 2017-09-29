@@ -15,9 +15,7 @@
   <ul>
     <% @stores.each() do |store| %>
       <li>
-        <!-- <a href="/stores/<%=store.id()%>"> -->
-          <%= store.store_name %>
-        <!-- </a>  -->
+        <a href="/stores/<%=store.id()%>"><%= store.store_name %></a> 
       </li>
     <% end %>
   </ul>

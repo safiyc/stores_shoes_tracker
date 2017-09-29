@@ -14,8 +14,6 @@ post("/stores") do
   store_name = params.fetch("store_name")
   store = Store.new({:store_name => store_name, :id => nil})
   store.save
-  # brand = Brand.new({:brand_name => brand_name, :id => nil})
-  # brand.save
   @stores = Store.all()
   @brands = Brand.all()
   erb(:index)
@@ -29,4 +27,10 @@ post("/brands") do
   @stores = Store.all()
   @brands = Brand.all()
   erb(:index)
+end
+
+get '/stores/:id' do
+  @store = Store.find(params[:id])
+  # @shoes = @store.brands
+  erb(:store_page)
 end
