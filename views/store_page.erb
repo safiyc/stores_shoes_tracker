@@ -3,26 +3,37 @@
 <br />
 <br />
 
-<!-- <h4>Add shoes:</h4>
+<h3>Select all shoes to have in this store:</h3>
 
-<form action="/stores/<%=@store.id%>" method="post">
-  <input id="store_id" name="store_id" type="hidden" value="<%= @store.id %>">
-  <input id="store_name" name="store_name" type="text">
-  <button type="submit">Add Shoes</button>
-</form>
-<br /> -->
+<% if @brands.any?() %>
+  <form action="/store-shoes/<%= @store.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <% @brands.each() do |brand| %>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="brand_ids[]" value="<%= brand.id() %>"><%= brand.brand_name() %>
+        </label>
+      </div>
+    <% end %>
 
-<!-- <h4>Current shoes in this store:</h4>
+    <button type="submit">Add Shoes</button>
+  </form>
+<% end %>
+
+<br />
+
+<h4>Current shoes in this store:</h4>
 
 <% if @store.brands().any?() %>
   <ul>
     <% @store.brands().each() do |brand| %>
-      <li>brand.brand_name</li>
+      <li><%= brand.brand_name%></li>
     <% end %>
   </ul>
+<% else %>
+    <p>There are no shoes in this store! <a href="/">Add shoes here</a></p>
+<% end %>
 
-  <% else %>
-    <p>There are no shoes in this store!</p>
-<% end %> -->
+<br />
 
 <a href="/">Home</a>

@@ -32,7 +32,7 @@ end
 # from index to store page
 get '/stores/:id' do
   @store = Store.find(params[:id])
-  # @shoes = @store.brands
+  @brands = Brand.all
   erb(:store_page)
 end
 
@@ -47,6 +47,7 @@ patch("/stores/:id") do
   store_name = params.fetch("store_name")
   @store = Store.find(params.fetch("id").to_i())
   @store.update({:store_name => store_name})
+  @brands = Brand.all
   erb(:store_page)
 end
 
@@ -57,4 +58,14 @@ delete("/:id") do
   @stores = Store.all
   @brands = Brand.all
   erb(:index)
+end
+
+# in store page; patching to select existing shoes to put in this store page
+patch("/store-shoes/:id") do
+  store_id = params.fetch("id").to_i()
+  @store = Store.find(store_id)
+  brand_ids = params.fetch("brand_ids")
+  @store.update({:brand_ids => brand_ids})
+  @brands = Brand.all()
+  erb(:store_page)
 end

@@ -51,3 +51,17 @@ describe 'the store edit path', {:type => :feature} do
     expect(page).not_to have_content('storeb')
   end
 end
+
+describe 'the shoes belonging to a stores page', {:type => :feature} do
+  it 'allows a user to add shoes to store from list of existing shoes' do
+    store1 = Store.create({:store_name => 'store1'})
+    visit '/'
+    fill_in('brand_name', :with => 'shoe1')
+    fill_in('price', :with => '5')
+    click_button("Add Shoes")
+    click_link('store1')
+    check('brand_ids[]')    # all checked existing shoes
+    click_button('Add Shoes')
+    expect(page).to have_content('shoe1')
+  end
+end
