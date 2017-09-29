@@ -28,3 +28,15 @@ describe 'the store detail page creation path', {:type => :feature} do
     expect(page).to have_content('Store1')
   end
 end
+
+describe 'the store edit path', {:type => :feature} do
+  it 'allows a user to change the name of the store' do
+    store1 = Store.create({:store_name => 'store1'})
+    visit '/'
+    click_link('store1')
+    click_link('Edit Name')
+    fill_in('store_name', :with => 'storeb')
+    click_button('Update Store')
+    expect(page).to have_content('storeb')
+  end
+end

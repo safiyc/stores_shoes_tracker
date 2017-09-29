@@ -34,3 +34,22 @@ get '/stores/:id' do
   # @shoes = @store.brands
   erb(:store_page)
 end
+
+get("/stores/:id/edit") do
+  @store =  Store.find(params.fetch("id").to_i())
+  erb(:store_edit)
+end
+
+patch("/stores/:id") do
+  store_name = params.fetch("store_name")
+  @store = Store.find(params.fetch("id").to_i())
+  @store.update({:store_name => store_name})
+  erb(:store_page)
+end
+
+# delete("/:id") do
+#   @store = Store.find(params.fetch("id").to_i())
+#   @store.delete
+#   @stores = Store.all
+#   erb(:index)
+# end
