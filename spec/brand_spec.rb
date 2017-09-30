@@ -28,7 +28,7 @@ describe(Brand) do
   end
 
   it('doesnt allow more than 100 characters in name') do
-    brand1 = Brand.create({:brand_name => 'brandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrand'})
+    brand1 = Brand.create({:brand_name => 'brandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrand'})
     expect(brand1.save).to eq(false)
   end
 end

@@ -17,4 +17,9 @@ describe(Store) do
     store2 = Store.create({:store_name => 'store1'})
     expect(store2.save).to eq(false)
   end
+
+  it('doesnt allow more than 100 characters in name') do
+    store1 = Store.create({:store_name => 'brandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrand'})
+    expect(store1.save).to eq(false)
+  end
 end
