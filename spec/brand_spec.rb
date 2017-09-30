@@ -20,4 +20,15 @@ describe(Brand) do
     price1 = Brand.create({:price => 15})
     expect(price1.price).to eq(15.00)
   end
+
+  it('disables duplicate name') do
+    brand1 = Brand.create({:brand_name => 'brand1'})
+    brand2 = Brand.create({:brand_name => 'brand1'})
+    expect(brand2.save).to eq(false)
+  end
+
+  it('doesnt allow more than 100 characters in name') do
+    brand1 = Brand.create({:brand_name => 'brandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrand'})
+    expect(brand1.save).to eq(false)
+  end
 end

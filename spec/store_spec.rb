@@ -11,4 +11,10 @@ describe(Store) do
     store1 = Store.create({:store_name => ''})
     expect(store1.save).to eq(false)
   end
+
+  it('disables duplicate name') do
+    store1 = Store.create({:store_name => 'store1'})
+    store2 = Store.create({:store_name => 'store1'})
+    expect(store2.save).to eq(false)
+  end
 end

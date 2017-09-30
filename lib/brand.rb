@@ -1,6 +1,6 @@
 class Brand < ActiveRecord::Base
   has_and_belongs_to_many(:stores)
-  validates(:brand_name, {:presence => true, :uniqueness => {case_sensitive: false}})
+  validates(:brand_name, {:presence => true, :uniqueness => {:case_sensitive => false}, :length => {:maximum => 100}})
   validates(:price, {:presence => true, :numericality => true})
   # below dry code works, but not sure how to include 'numericality'
   # validates_presence_of :brand_name, :price
