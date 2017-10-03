@@ -4,7 +4,7 @@ describe(Store) do
 
   it('returns inputted store in uppercase') do
     store1 = Store.create({:store_name => 'store1'})
-    expect(store1.store_name).to eq("STORE1")
+    expect(store1.store_name).to eq("Store1")
   end
 
   it('checks to disable blank inputs') do
@@ -19,7 +19,7 @@ describe(Store) do
   end
 
   it('doesnt allow more than 100 characters in name') do
-    store1 = Store.create({:store_name => 'brandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrand'})
+    store1 = Store.create({:store_name => 'brandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrandbrand1'})
     expect(store1.save).to eq(false)
   end
 end

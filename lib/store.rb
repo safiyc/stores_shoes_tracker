@@ -1,6 +1,6 @@
 class Store < ActiveRecord::Base
   has_and_belongs_to_many(:brands)
-  # for some reason, this must be 101 characters before it returns false; 'brand.rb' returns false at 100 characters
+  # length, after 100 characters limit, input is not accepted
   validates :store_name, presence: true, uniqueness: {case_sensitive: false}, length: {maximum: 100}
   # this works too:
   # validates(:store_name, {:presence => true, :uniqueness => {:case_sensitive => false}, :length => {:maximum => 100}})
@@ -9,6 +9,6 @@ class Store < ActiveRecord::Base
   private
 
   def upcase_store_name
-    self.store_name=(store_name().upcase())
+    self.store_name = store_name.split.map(&:capitalize).join(' ')
   end
 end

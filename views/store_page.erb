@@ -18,11 +18,15 @@
 
     <button type="submit">Add Shoes</button>
   </form>
+<% else %>
+  <p>There are no existing shoes to add to this store.
+    <a href="/">Click here to add shoes.</a>
+  </p>
 <% end %>
 
 <br />
 
-<h4>Current shoes in this store:</h4>
+<h3>Current shoes in this store:</h3>
 
 <% if @store.brands().any?() %>
   <ul>
@@ -31,7 +35,7 @@
     <% end %>
   </ul>
 <% else %>
-    <p>There are no shoes in this store! <a href="/">Add shoes here</a></p>
+    <p>There are no shoes in this store!</p>
 <% end %>
 
 <br />
