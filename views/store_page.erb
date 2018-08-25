@@ -1,7 +1,5 @@
 <h1><%= @store.store_name %></h1>
 <a href = "/stores/<%=@store.id%>/edit">Edit Name</a>
-<br />
-<br />
 
 <h3>Select all shoes to have in this store:</h3>
 
@@ -15,7 +13,6 @@
         </label>
       </div>
     <% end %>
-
     <button type="submit">Add Shoes</button>
   </form>
 <% else %>
@@ -24,12 +21,10 @@
   </p>
 <% end %>
 
-<br />
-
 <h3>Current shoes in this store:</h3>
 
 <% if @store.brands().any?() %>
-  <ul>
+  <ul class="store_shoes">
     <% @store.brands().each() do |brand| %>
       <li><%= brand.brand_name%></li>
     <% end %>
@@ -38,6 +33,4 @@
     <p>There are no shoes in this store!</p>
 <% end %>
 
-<br />
-
-<a href="/">Home</a>
+<div class="heading"><a href="/">Home</a></div>

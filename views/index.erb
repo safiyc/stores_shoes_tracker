@@ -1,51 +1,46 @@
-<h1>Welcome!</h1>
-<br />
-
-<h4>Add a store:</h4>
-
-<form action="/stores" method="post">
-  <input id="store_name" name="store_name" type="text">
-  <button type="submit">Add Store</button>
-</form>
-<br />
-
-<h5>List of stores:</h5>
-
-<% if @stores.any?() %>
-  <ul>
-    <% @stores.each() do |store| %>
-      <li>
-        <a href="/stores/<%=store.id()%>"><%= store.store_name %></a>
-      </li>
+<div class="heading">welcome</div>
+<div class="forms">
+  <div class="form_box">
+    <form action="/stores" method="post">
+      <input class="inputs" id="store_name" name="store_name" type="text" placeholder="name of store">
+      <button class="btn btn-primary" type="submit">Add Store</button>
+    </form>
+  </div>
+  <div class="form_box">
+    <form action="/brands" method="post">
+      <input class="inputs" id="brand_name" name="brand_name" type="text" placeholder="name of shoes">
+      <input class="inputs" id="price" name="price" type="text" placeholder="cost of shoes">
+      <button class="btn btn-primary" type="submit">Add Shoes</button>
+    </form>
+  </div>
+</div>
+<div class="lists">
+  <div class="list_stores">
+    <div class="heading">list of stores</div>
+    <% if @stores.any?() %>
+      <ul>
+        <% @stores.each() do |store| %>
+          <li>
+            <a href="/stores/<%=store.id()%>"><%= store.store_name %></a>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>There are no current stores.</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>There are no current stores.</p>
-<% end %>
-
-<br />
-<br />
-
-<h4>Add shoes:</h4>
-
-<form action="/brands" method="post">
-  <input id="brand_name" name="brand_name" type="text">
-  <label for="price">Price:</label>
-  <input id="price" name="price" type="text">
-  <button type="submit">Add Shoes</button>
-</form>
-<br />
-
-<h5>List of shoes:</h5>
-
-<% if @brands.any?() %>
-  <ul>
-    <% @brands.each() do |brand| %>
-      <li>
-        <a href="/brands/<%=brand.id()%>"><%= brand.brand_name %> - - - $<%= brand.price %></a>
-      </li>
+  </div>
+  <div class="list_shoes">
+    <div class="heading">list of shoes</div>
+    <% if @brands.any?() %>
+      <ul>
+        <% @brands.each() do |brand| %>
+          <li>
+            <a href="/brands/<%=brand.id()%>" class="items"><%= brand.brand_name %> - - - $<%= brand.price %></a>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>There are no current shoes.</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>There are no current shoes.</p>
-<% end %>
+  </div>
+</div>
