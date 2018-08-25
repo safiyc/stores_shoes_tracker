@@ -29,6 +29,12 @@ post("/brands") do
   erb(:index)
 end
 
+# from index to shoes page
+get '/brands/:id' do
+  @brand = Brand.find(params[:id])
+  erb(:brand_page)
+end
+
 # from index to store page
 get '/stores/:id' do
   @store = Store.find(params[:id])

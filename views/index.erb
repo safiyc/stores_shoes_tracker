@@ -42,8 +42,7 @@
   <ul>
     <% @brands.each() do |brand| %>
       <li>
-        <%= brand.brand_name %> - - - $<%= brand.price %>
-
+        <a href="/brands/<%=brand.id()%>"><%= brand.brand_name %> - - - $<%= brand.price %></a>
       </li>
     <% end %>
   </ul>
