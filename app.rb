@@ -35,6 +35,12 @@ get '/brands/:id' do
   erb(:brand_page)
 end
 
+# from shoes page to shoes edit page
+get("/brands/:id/edit") do
+  @brand =  Brand.find(params.fetch("id").to_i())
+  erb(:brand_edit)
+end
+
 # from index to store page
 get '/stores/:id' do
   @store = Store.find(params[:id])
