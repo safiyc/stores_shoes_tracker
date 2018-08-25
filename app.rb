@@ -51,6 +51,15 @@ patch("/brands/:id") do
   erb(:brand_page)
 end
 
+# in shoes edit page; then, back to index
+delete("/:id") do
+  @brand = Brand.find(params.fetch("id").to_i())
+  @brand.delete
+  @stores = Store.all
+  @brands = Brand.all
+  erb(:index)
+end
+
 # from index to store page
 get '/stores/:id' do
   @store = Store.find(params[:id])
