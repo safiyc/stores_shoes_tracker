@@ -41,6 +41,16 @@ get("/brands/:id/edit") do
   erb(:brand_edit)
 end
 
+# in shoes edit page; then, back to shoes page
+patch("/brands/:id") do
+  brand_name = params.fetch("brand_name")
+  price = params.fetch("price")
+  @brand = Brand.find(params.fetch("id").to_i())
+  @brand.update({:brand_name => brand_name})
+  @brand.update({:price => price})
+  erb(:brand_page)
+end
+
 # from index to store page
 get '/stores/:id' do
   @store = Store.find(params[:id])

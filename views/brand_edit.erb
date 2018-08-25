@@ -7,13 +7,10 @@
 <form style="display: inline" action="/brands/<%= @brand.id() %>" method="post">
   <input name="_method" type="hidden" value="patch">
   <input id="brand_name" name="brand_name" type="text">
-  <button type="submit">Update Brand</button>
-</form>
-
-<form style="display: inline;" action="/<%= @brand.id() %>" method="post">
-  <input name="_method" type="hidden" value="delete">
-  <button type="submit">Delete Brand</button>
+  <input id="price" name="price" type="text">
+  <button type="submit">Update</button>
 </form>
 <br />
 
+<br />
 <a href="/">Home</a>
