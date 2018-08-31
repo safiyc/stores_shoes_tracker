@@ -1,5 +1,10 @@
-<h1><%= @store.store_name %></h1>
-<a href = "/stores/<%=@store.id%>/edit">Edit Name</a>
+<h1>Store: <%= @store.store_name %></h1>
+<a class="btn btn-primary" href = "/stores/<%=@store.id%>/edit">Edit</a>
+
+<form style="display: inline;" action="/stores/<%= @store.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button class="btn btn-primary" type="submit">Delete Store</button>
+</form>
 
 <h3>Select all shoes to have in this store:</h3>
 
@@ -13,7 +18,7 @@
         </label>
       </div>
     <% end %>
-    <button type="submit">Add Shoes</button>
+    <button class="btn btn-primary" type="submit">Add Shoes</button>
   </form>
 <% else %>
   <p>There are no existing shoes to add to this store.
@@ -33,4 +38,4 @@
     <p>There are no shoes in this store!</p>
 <% end %>
 
-<div class="heading"><a href="/">Home</a></div>
+<div class="home"><a href="/">Home</a></div>

@@ -1,5 +1,10 @@
-<h1><%= @brand.brand_name %></h1>
+<h1>Shoes: <%= @brand.brand_name %></h1>
 <h1>$<%= @brand.price %></h1>
-<a href = "/brands/<%=@brand.id%>/edit">Edit Name</a>
+<a class="btn btn-primary" href = "/brands/<%=@brand.id%>/edit">Edit</a>
 
-<div class="heading"><a href="/">Home</a></div>
+<form style="display: inline;" action="/brands/<%= @brand.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button class="btn btn-primary" type="submit">Delete</button>
+</form>
+
+<div class="home"><a href="/">Home</a></div>

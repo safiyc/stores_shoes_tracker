@@ -17,6 +17,6 @@ class Brand < ActiveRecord::Base
     # look up 'sprintf' to refresh
     # '.2' should make output display '0.00', but only showing '0.0'
     # self.price = "%0.2f" % price
-    self.price = "%0.2f" % price
+    self.price = sprintf('%0.2f', price)
   end
 end

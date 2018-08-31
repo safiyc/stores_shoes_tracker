@@ -52,7 +52,7 @@ patch("/brands/:id") do
 end
 
 # in shoes edit page; then, back to index
-delete("/:id") do
+delete("/brands/:id") do
   @brand = Brand.find(params.fetch("id").to_i())
   @brand.delete
   @stores = Store.all
@@ -83,7 +83,7 @@ patch("/stores/:id") do
 end
 
 # in store edit page; then, back to index
-delete("/:id") do
+delete("/stores/:id") do
   @store = Store.find(params.fetch("id").to_i())
   @store.delete
   @stores = Store.all

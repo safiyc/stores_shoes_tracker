@@ -1,17 +1,10 @@
 
-<h1><%= @store.store_name %></h1>
-
-<h4>Rename or Delete:</h4>
+<h1>Store: <%= @store.store_name %></h1>
 
 <form style="display: inline" action="/stores/<%= @store.id() %>" method="post">
   <input name="_method" type="hidden" value="patch">
-  <input id="store_name" name="store_name" type="text">
-  <button type="submit">Update Store</button>
+  <input class="input_fields" placeholder="rename" id="store_name" name="store_name" type="text">
+  <button class="btn btn-primary" type="submit">Update Store</button>
 </form>
 
-<form style="display: inline;" action="/<%= @store.id() %>" method="post">
-  <input name="_method" type="hidden" value="delete">
-  <button type="submit">Delete Store</button>
-</form>
-
-<div class="heading"><a href="/">Home</a></div>
+<div class="home"><a href="/">Home</a></div>

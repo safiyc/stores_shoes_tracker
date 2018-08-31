@@ -1,19 +1,12 @@
 
-<h1><%= @brand.brand_name %></h1>
-<h1><%= @brand.price %></h1>
-
-<h4>Rename or Delete:</h4>
+<h1>Shoes: <%= @brand.brand_name %></h1>
+<h1>$<%= @brand.price %></h1>
 
 <form style="display: inline" action="/brands/<%= @brand.id() %>" method="post">
   <input name="_method" type="hidden" value="patch">
-  <input id="brand_name" name="brand_name" type="text">
-  <input id="price" name="price" type="text">
-  <button type="submit">Update</button>
+  <input class="input_fields" placeholder="rename" id="brand_name" name="brand_name" type="text">
+  <input class="input_fields" placeholder="cost" id="price" name="price" type="text">
+  <button class="btn btn-primary" type="submit">Update</button>
 </form>
 
-<form style="display: inline;" action="/<%= @brand.id() %>" method="post">
-  <input name="_method" type="hidden" value="delete">
-  <button type="submit">Delete</button>
-</form>
-
-<div class="heading"><a href="/">Home</a></div>
+<div class="home"><a href="/">Home</a></div>
