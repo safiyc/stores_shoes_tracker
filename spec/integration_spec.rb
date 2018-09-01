@@ -1,6 +1,6 @@
 require "capybara/rspec"
 require "./app"
-# require "pry"
+require "pry"
 require('spec_helper')
 
 Capybara.app = Sinatra::Application
@@ -34,19 +34,18 @@ describe 'the store edit path', {:type => :feature} do
     store1 = Store.create({:store_name => 'store1'})
     visit '/'
     click_link('Store1')
-    click_link('Edit Name')
+    click_link('Edit')
     fill_in('store_name', :with => 'store b')
     click_button('Update Store')
     expect(page).to have_content('Store B')
   end
 end
 
-describe 'the store edit path', {:type => :feature} do
+describe 'the store detail page path', {:type => :feature} do
   it 'allows a user to delete a store' do
     store1 = Store.create({:store_name => 'store1'})
     visit '/'
     click_link('Store1')
-    click_link('Edit Name')
     click_button('Delete Store')
     expect(page).not_to have_content('Store1')
   end

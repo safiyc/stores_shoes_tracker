@@ -27,7 +27,7 @@ This program lets the user create/update/delete stores. The user can also create
 
 ## Links
 
-### [Project's Website](https://git.heroku.com/stores-shoes-tracker.git)
+### [Project's Website](https://stores-shoes-tracker.herokuapp.com/)
 
 ### [Github Repo](https://github.com/safiyc/stores_shoes_tracker.git)
 
