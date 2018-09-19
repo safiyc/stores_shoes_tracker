@@ -1,10 +1,17 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 html, body {
-    margin: 0;
     height: 100%;
+    background: lightgrey;
 }
 
 body {
@@ -17,7 +24,7 @@ body {
     background: url("./bg-banner.jpg");
     background-size: contain;
     border: 2px solid black;
-    border-bottom: 5px solid black;
+    border-bottom: 5px dashed black;
     min-width: 762px;
     width: 80%;
     margin: 0 auto;
@@ -31,7 +38,7 @@ body {
     line-height: 2.5rem;
     padding: 4rem;
     border: 2px solid black;
-    border-bottom: 5px solid black;
+    border-bottom: 5px dashed black;
     margin: 40px auto 16px;
     white-space: nowrap;
     background: rgba(126, 126, 126, 0.5);
@@ -41,11 +48,10 @@ body {
     padding: 20px 10px 40px;
     min-width: 762px;
     margin: 0 auto;
-    /* padding-bottom: 40px; */
 }
 
 .welcome {
-    font-size: 3rem;
+    font-size: 4rem;
     text-align: center;
     font-weight: bold;
     margin: 10px;
@@ -61,9 +67,10 @@ body {
 .input_fields {
     border: 1px solid black;
     width: 150px;
-    height: 35px;
+    height: 3.5rem;
     border-radius: 2px;
     text-align: center;
+    vertical-align: middle;
 }
 
 .input_fields:focus {
@@ -77,6 +84,9 @@ body {
 .btn-primary {
     border-radius: 2px;
     border: 1px solid black;
+    height: 3.5rem;
+    line-height: 2.45rem;
+    vertical-align: middle;
 }
 
 .forms {
@@ -91,6 +101,7 @@ body {
     height: 60px;
     padding: 10px;
     white-space: nowrap;
+    background: white;
 }
 
 .lists {
@@ -105,6 +116,7 @@ body {
     margin-right: 10px;
     min-height: 200px;
     padding: 10px;
+    background: white;
 }
 
 .list_shoes {
@@ -114,6 +126,7 @@ body {
     margin-left: 10px;
     min-height: 200px;
     padding: 10px;
+    background: white;
 }
 
 .list_title {
@@ -130,6 +143,7 @@ ul {
 .items {
     border-left: 1px solid black;
     padding-left: 4px;
+    overflow-wrap: break-word;
 }
 
 .items:nth-child(odd) {
@@ -194,9 +208,7 @@ a:focus, button:focus {
 
 .footer {
     height: 40px;
-    /* min-width: 750px; */
     text-align: center;
-    /* padding-top: 5px; */
     position: fixed;
     margin: 0 auto;
     bottom: 0;
@@ -216,6 +228,7 @@ a:focus, button:focus {
 
 @media only screen and (max-width: 768px) {
     .site_desc {
+        font-size: 1.6rem;
         margin-bottom: 10px;
     }
 
@@ -250,7 +263,7 @@ a:focus, button:focus {
     .btn-primary {
         height: 4.5rem;
         width: 12rem;
-        line-height: 3.6rem;
+        line-height: 3.45rem;
     }
 
     .lists {
