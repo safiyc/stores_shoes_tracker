@@ -1,8 +1,8 @@
-# Shoe-Store Tracker
+# Stores And Shoes Tracker
 
-#### Technologies used: Ruby, Sinatra, Capybara, PostgreSQL, ActiveRecord, HTML, CSS
+### Technologies: Ruby, Sinatra, Capybara, PostgreSQL, ActiveRecord, HTML, CSS
 
-##### By Safiy Cham
+### By Safiy Cham
 
 ## Description
 
@@ -18,7 +18,6 @@ This program lets the user create/update/delete stores. The user can also create
 
 ## Pending Features
 
-* Make website responsive
 * Display error message when entering invalid inputs
 
 ## Known Bugs
@@ -27,15 +26,15 @@ This program lets the user create/update/delete stores. The user can also create
 
 ## Links
 
-### [Project's Website](https://stores-shoes-tracker.herokuapp.com/)
+#### Launch Program - [Stores And Shoes Tracker](https://stores-shoes-tracker.herokuapp.com/)
 
-### [Github Repo](https://github.com/safiyc/stores_shoes_tracker.git)
+#### [Github Repo](https://github.com/safiyc/stores_shoes_tracker.git)
 
-### [Portfolio Website](http://www.safiycham.com/)
+#### [Portfolio Website](http://www.safiycham.com/)
 
 ## Contact Info
 
-### csafiy@yahoo.com
+#### csafiy@yahoo.com
 
 ## License
 

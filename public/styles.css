@@ -8,8 +8,8 @@ html, body {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
 }
 
 .header {
@@ -25,10 +25,10 @@ body {
 
 .header_title {
     color: white;
-    font-size: 36px;
+    font-size: 4rem;
     width: fit-content;
-    height: 35px;
-    line-height: 20px;
+    height: 3rem;
+    line-height: 2.5rem;
     padding: 4rem;
     border: 2px solid black;
     border-bottom: 5px solid black;
@@ -38,16 +38,24 @@ body {
 }
 
 .content {
-    padding: 20px 10px;
+    padding: 20px 10px 40px;
     min-width: 762px;
     margin: 0 auto;
+    /* padding-bottom: 40px; */
 }
 
 .welcome {
-    font-size: 30px;
+    font-size: 3rem;
     text-align: center;
     font-weight: bold;
     margin: 10px;
+}
+
+.site_desc {
+    width: 700px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 .input_fields {
@@ -109,7 +117,7 @@ body {
 }
 
 .list_title {
-    font-size: 30px;
+    font-size: 3rem;
     font-weight: bold;
     margin: 10px;
 }
@@ -185,17 +193,91 @@ a:focus, button:focus {
 }
 
 .footer {
-    height: 30px;
-    min-width: 750px;
+    height: 40px;
+    /* min-width: 750px; */
     text-align: center;
-    margin-top: auto;
-    padding-top: 5px;
+    /* padding-top: 5px; */
+    position: fixed;
+    margin: 0 auto;
+    bottom: 0;
+    width: 100%;
+    background: grey;
 }
 
 .footer a {
     border: none;
+    color: white;
+    line-height: 40px;
 }
 
 .footer a:hover {
     background: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .site_desc {
+        margin-bottom: 10px;
+    }
+
+    .forms {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .form_box {
+        text-align: center;
+        margin-top: 0;
+        height: 6.5rem;
+        padding: .8rem .63rem;
+    }
+
+    .input_fields {
+        height: 4.5rem;
+    }
+
+    #store_name {
+        width: 50rem;
+    }
+
+    #brand_name {
+        width: 25rem;
+    }
+
+    #price {
+        width: 25rem;
+    }
+
+    .btn-primary {
+        height: 4.5rem;
+        width: 12rem;
+        line-height: 3.6rem;
+    }
+
+    .lists {
+        justify-content: space-evenly;
+    }
+
+    .list_stores {
+        width: 46%;
+        padding-left: 10px;
+        min-height: 600px;
+    }
+
+    .list_shoes {
+        width: 47%;
+        padding-right: 10px;
+        min-height: 600px;
+    }
+
+    .items {
+        height: 4.5rem;
+    }
+
+    .items a {
+        line-height: 4.5rem;
+        font-size: 2rem;
+        padding: unset;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
